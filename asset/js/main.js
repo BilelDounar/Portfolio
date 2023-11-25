@@ -64,6 +64,10 @@ function leaveModal() {
     modal_parameter.style.display = 'none';
 }
 
+
+
+
+
 function toggleTheme() {
     // Fermer le modal_parameter si ouvert
     var modal_parameter = document.getElementById('modal_parameter');
@@ -213,3 +217,64 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+//MODAL PROJETS
+
+var titre_projet = document.querySelector('.modal_projets_text h2');
+var span_projet = document.querySelector('.modal_projets_text span');
+var descri_projet = document.querySelector('.modal_projets_content p');
+
+let projets = {
+    "projetOnlyvax": {
+        "titre": "ONLYVAX",
+        "description": "Carnet de vaccination",
+        "paragraphe": "Onlyvax, un projet de groupe conçu dans le cadre de ma première année de formation en développement web, propose un site intuitif dédié à la gestion des vaccins et des rappels pour ses utilisateurs.",
+        "image_url": "/asset/img/green_theme.jpg"
+    },
+    "agGrid": {
+        "titre": "AG-GRID",
+        "description": "Gestion d’info. utilisateur",
+        "paragraphe": "Ici, vous trouverez un projet d'application web utilisant AG-Grid pour la gestion d'informations utilisateur. Celui-ci a été réalisé lors d'un stage de deux mois à l'étranger.",
+        "image_url": "/asset/img/orange_theme.jpg"
+    },
+    "portfolio": {
+        "titre": "PORTFOLIO",
+        "description": "Mon Portfolio",
+        "paragraphe": "Vous trouverez ici mon portfolio sur lequel vous êtes actuellement. Celui-ci a été créé en HTML/CSS, PHP et JavaScript avec de légères inspirations d’un site très connu.",
+        "image_url": "/asset/img/blue_theme.jpg"
+    }
+};
+
+var modal_projets = document.querySelector('#modal_projets')
+function modalProjets(event, url, id) {
+    event.preventDefault();
+
+    // Vérifiez si l'ID spécifié existe dans les projets
+    if (projets.hasOwnProperty(id)) {
+        var projet = projets[id];
+
+        // Affichez les informations du projet spécifique
+        titre_projet.textContent = projet.titre;
+        span_projet.textContent = projet.description;
+        descri_projet.textContent = projet.paragraphe;
+
+        modal_projets.style.display = 'block';
+        modal_projets.style.backgroundImage = `url("${projet.image_url}")`;
+        modal_projets.style.backgroundColor = `var(--tertiary)`;
+        modal_projets.style.backgroundPosition = `50%`;
+        modal_projets.style.backgroundSize = `cover`;
+        modal_projets.style.backgroundRepeat = `no-repeat`;
+    } else {
+        console.error('Le projet spécifié n\'existe pas dans le fichier JSON.');
+    }
+}
+
+
+function leaveModalProjets() {
+    modal_projets.style.display = 'none';
+}
+
+
+

@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="asset/css/input.css">
     <link rel="stylesheet" href="asset/css/output.css">
     <link rel="stylesheet" href="asset/css/style.css">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ripples.js"></script>    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ripples.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <title>Document</title>
+    <title>Bilel Dounar - Portfolio</title>
 </head>
 
 <body>
@@ -141,15 +142,18 @@
                 </div>
 
                 <div class="projets_box">
-                    <div class="project_card">
+                    <div class="project_card modal_projets_img1"
+                        onclick="modalProjets(event,'asset/img/green_theme.jpg', 'projetOnlyvax')">
                         <h2>ONLYVAX</h2>
                         <p>Carnet de vaccination <br> -<br> Projet de formation </p>
                     </div>
-                    <div class="project_card">
+                    <div class="project_card modal_projets_img2"
+                        onclick="modalProjets(event,'asset/img/orange_theme.jpg', 'agGrid')">
                         <h2>AG-GRID</h2>
                         <p>Gestion d’info. utilisateur <br> -<br> Stage à l’étanger </p>
                     </div>
-                    <div class="project_card">
+                    <div class="project_card modal_projets_img3"
+                        onclick="modalProjets(event,'asset/img/blue_theme.jpg', 'portfolio')">
                         <h2>PORTFOLIO</h2>
                         <p>Mon portfolio <br> -<br> Projet personnel </p>
                     </div>
@@ -257,6 +261,24 @@
         <l-ripples size="400" speed="7" color="#222222"></l-ripples>
     </div>
 
+    <div id="modal_projets">
+        <div class="modal_projets_container">
+            <a class="leave_modal_projets" onclick="leaveModalProjets()"><i class="fa-solid fa-x"></i></a>
+
+            <div class="modal_projets_text">
+                <h2>ONLYVAX</h2>
+                <span>Carnet de vaccination</span>
+            </div>
+            <div class="modal_projets_content">
+                <p>Onlyvax, un projet de groupe conçu dans le cadre de ma première année de formation en développement
+                    web,
+                    propose un site intuitif dédié à la gestion des vaccins et des rappels pour ses utilisateurs.</p>
+                <a href="" class="box_link_projet">
+                    <span>Accéder à GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 
