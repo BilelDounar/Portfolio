@@ -7,6 +7,12 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+:root {
+  --primary: #000000;
+  --secondary: #f5f5f5;
+  --tertiary: #262626;
+}
+
 *,
 ::before,
 ::after {
@@ -821,7 +827,7 @@ video {
 
 .text-gray-900 {
   --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+  color: #000;
 }
 
 .transition {
@@ -865,8 +871,7 @@ video {
 
 .group:hover .group-hover\:text-gray-900 {
   --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
+  background-color: #000;}
 
 @media (prefers-color-scheme: dark) {
   .dark\:border-gray-700 {
@@ -914,9 +919,12 @@ video {
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
+
+
   .dark\:hover\:bg-gray-700:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    background-color: var(--secondary);
+    color: var(--primary);
   }
 
   .dark\:focus\:ring-gray-600:focus {
