@@ -1,73 +1,21 @@
+let blanc10 = '#ffffff10';
+let blanc = '#fff';
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Le DOM est prêt, mais certaines ressources peuvent encore être en cours de chargement
+    console.log('DOM prêt');
 
-var data = {
-    labels: ['HTML', 'CSS', 'PHP', 'SQL', 'JS'],
-    datasets: [{
-        label: 'Savoir /100%',
-        data: [90, 75, 70, 80, 60],
-        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)'], // Couleur de fond pour chaque barre
-        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 205, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)'], // Couleur de la bordure pour chaque barre
+    // Ajouter un gestionnaire d'événement pour l'événement onload de la fenêtre
+    window.onload = function () {
+        // Tout le contenu de la page, y compris les ressources externes, est chargé
+        console.log('Toute la page est chargée');
 
-        borderWidth: 1,
-
-    }]
-};
-
-
-var options = {
-    scales: {
-        y: {
-            min: 0,
-            max: 100,
-            beginAtZero: true,
-            grid: {
-                color: '#ffffff10' // Couleur de la grille de l'axe Y
-            },
-            ticks: {
-                color: '#fff' // Couleur du texte de l'axe Y
-            }
-        },
-        x: {
-            ticks: {
-                color: '#fff' // Couleur du texte de l'axe Y
-            }
-        }
-    },
-    animation: {
-        onComplete: function (animation) {
-            // Marquer l'animation comme complète après l'apparition de la dernière barre
-            myChart.options.animation.onComplete = null;
-        },
-        delay: function (context) {
-            // Ajouter un délai pour chaque barre basé sur son index
-            return context.dataIndex * 100;
-        }
-    },
-    plugins: {
-        legend: {
-            display: false
-        }
-    },
-    hover: {
-        mode: 'nearest',
-        intersect: true
-    },
-    onClick: function (event, elements) {
-        // Gérer le clic sur une barre
-        if (elements.length > 0) {
-            var index = elements[0].index;
-            console.log('Barre cliquée :', data.labels[index], data.datasets[0].data[index]);
-        }
-    }
-};
-
-
-
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: data,
-    options: options
+        // Ajouter un délai de 2 secondes avant de masquer l'écran de chargement
+        setTimeout(function () {
+            var loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.display = 'none';
+        }, 2000);
+    };
 });
 
 
@@ -106,12 +54,12 @@ function contracteSidebar(event) {
         logoSpan.textContent = 'Bilel Dounar';
     }
 }
-var modal_parameter = document.querySelector('#modal_parameter');
+
 function parameter(event) {
     event.preventDefault();
-
     modal_parameter.style.display = 'block';
 }
+
 function leaveModal() {
     modal_parameter.style.display = 'none';
 }
@@ -119,9 +67,9 @@ function leaveModal() {
 function toggleTheme() {
     // Fermer le modal_parameter si ouvert
     var modal_parameter = document.getElementById('modal_parameter');
-    if (modal_parameter.style.display !== 'none') {
-        modal_parameter.style.display = 'none';
-    }
+
+    blanc = '#000';
+    blanc10 = '#00000010';
 
     var root = document.documentElement;
     var currentPrimaryColor = getComputedStyle(root).getPropertyValue('--primary').trim();
@@ -167,5 +115,101 @@ function toggleTheme() {
             });
         }
     });
+
+    // Mettre à jour les options du graphique avec les nouvelles couleurs
+    options.scales.y.grid.color = blanc10;
+    options.scales.y.ticks.color = blanc;
+    options.scales.x.ticks.color = blanc;
+
+    // Mettre à jour le graphique
+    myChart.update();
 }
 
+var data = {
+    labels: ['HTML', 'CSS', 'PHP', 'SQL', 'JS'],
+    datasets: [{
+        label: 'Savoir /100%',
+        data: [90, 75, 70, 80, 60],
+        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)'], // Couleur de fond pour chaque barre
+        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 205, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)'], // Couleur de la bordure pour chaque barre
+
+        borderWidth: 1,
+
+    }]
+};
+
+
+var options = {
+    scales: {
+        y: {
+            min: 0,
+            max: 100,
+            beginAtZero: true,
+            grid: {
+                color: blanc10 // Couleur de la grille de l'axe Y
+            },
+            ticks: {
+                color: blanc // Couleur du texte de l'axe Y
+            }
+        },
+        x: {
+            ticks: {
+                color: blanc // Couleur du texte de l'axe Y
+            }
+        }
+    },
+    animation: {
+        onComplete: function (animation) {
+            // Marquer l'animation comme complète après l'apparition de la dernière barre
+            myChart.options.animation.onComplete = null;
+        },
+        delay: function (context) {
+            // Ajouter un délai pour chaque barre basé sur son index
+            return context.dataIndex * 100;
+        }
+    },
+    plugins: {
+        legend: {
+            display: false
+        }
+    },
+    hover: {
+        mode: 'nearest',
+        intersect: true
+    },
+    onClick: function (event, elements) {
+        // Gérer le clic sur une barre
+        if (elements.length > 0) {
+            var index = elements[0].index;
+            console.log('Barre cliquée :', data.labels[index], data.datasets[0].data[index]);
+        }
+    }
+};
+
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: options
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var socialIcons = document.querySelectorAll('.reseaux .fa-brands,.reseaux .fa-solid ');
+
+    // Ajouter la classe lors du survol pour chaque icône
+    socialIcons.forEach(function (icon) {
+        icon.addEventListener('mouseover', function () {
+            // Ajoutez la classe fa-bounce à votre élément <i>
+            icon.classList.add('fa-bounce');
+        });
+
+        // Supprimer la classe lorsqu'on quitte le survol
+        icon.addEventListener('mouseout', function () {
+            // Retirez la classe fa-bounce de votre élément <i>
+            icon.classList.remove('fa-bounce');
+        });
+    });
+});

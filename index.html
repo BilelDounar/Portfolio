@@ -11,11 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="asset/css/input.css">
     <link rel="stylesheet" href="asset/css/output.css">
     <link rel="stylesheet" href="asset/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ripples.js"></script>    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <title>Document</title>
@@ -110,19 +109,19 @@
                 </div>
                 <div class="profil_réseaux">
                     <div class="reseaux">
-                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-github fa-bounce"></i></a>
+                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-github "></i></a>
                         <span>GitHub</span>
                     </div>
                     <div class="reseaux">
-                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-instagram fa-bounce"></i></a>
+                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-instagram "></i></a>
                         <span>Instagram</span>
                     </div>
                     <div class="reseaux">
-                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-linkedin fa-bounce"></i></a>
+                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-linkedin "></i></a>
                         <span>LinkedIn</span>
                     </div>
                     <div class="reseaux">
-                        <a href="" class="box_img_reseaux"><i class="fa-solid fa-file-arrow-down fa-bounce"></i></a>
+                        <a href="" class="box_img_reseaux"><i class="fa-solid fa-file-arrow-down "></i></a>
                         <span>CV</span>
                     </div>
                 </div>
@@ -137,7 +136,7 @@
             <div class="wrap1">
 
                 <div class="h3_container">
-                    <h3><i class="fa-solid fa-list-check"></i> Projets</h3>
+                    <h3 class="underline"><i class="fa-solid fa-list-check"></i> Projets</h3>
                     <h3><i class="fa-solid fa-briefcase"></i> Compétences</h3>
                 </div>
 
@@ -167,7 +166,7 @@
             <div class="wrap1">
                 <div class="h3_container">
                     <h3><i class="fa-solid fa-list-check"></i> Projets</h3>
-                    <h3><i class="fa-solid fa-briefcase"></i> Compétences</h3>
+                    <h3 class="underline"><i class="fa-solid fa-briefcase"></i> Compétences</h3>
                 </div>
 
                 <div class="competences_chart">
@@ -220,9 +219,10 @@
                 <div class="hr_style">
                     <hr>
                 </div>
+                <p class="copyright">Copyright&copy - Bilel Dounar - Tous droit réservé</p>
             </div>
         </section>
-        
+
     </section>
 
     <div id="modal_parameter">
@@ -230,12 +230,35 @@
             <a class="leave_modal" onclick="leaveModal()"><i class="fa-solid fa-x"></i></a>
             <div class="modal_parameter_text">
                 <h2>PARAMETRES</h2>
-                <span>Passer au mode sombre / clair:</span>
-                <button onclick="toggleTheme()">Toggle Theme</button>
-            </div>
+                <br>
 
+                <label for="theme" class="theme">
+                    <span>Light</span>
+                    <span class="theme__toggle-wrap">
+                        <input onclick="toggleTheme()" type="checkbox" class="theme__toggle" id="theme" role="switch"
+                            name="theme" value="dark" checked />
+                        <span class="theme__fill"></span>
+                        <span class="theme__icon">
+                            <span class="theme__icon-part"></span><span class="theme__icon-part"></span><span
+                                class="theme__icon-part"></span><span class="theme__icon-part"></span><span
+                                class="theme__icon-part"></span><span class="theme__icon-part"></span><span
+                                class="theme__icon-part"></span><span class="theme__icon-part"></span><span
+                                class="theme__icon-part"></span>
+                        </span>
+                    </span>
+                    <span>Dark</span>
+                </label>
+            </div>
         </div>
     </div>
+
+    <div id="loading-screen">
+        <h1>PORTFOLIO <br>- <br> Bilel D.</h1>
+        <l-ripples size="400" speed="7" color="#222222"></l-ripples>
+    </div>
+
+
+
 
     <script src="asset/js/main.js"></script>
 
