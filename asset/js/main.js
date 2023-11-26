@@ -225,25 +225,29 @@ document.addEventListener('DOMContentLoaded', function () {
 var titre_projet = document.querySelector('.modal_projets_text h2');
 var span_projet = document.querySelector('.modal_projets_text span');
 var descri_projet = document.querySelector('.modal_projets_content p');
+var link = document.querySelector('.modal_projets_content a');
 
 let projets = {
     "projetOnlyvax": {
         "titre": "ONLYVAX",
         "description": "Carnet de vaccination",
         "paragraphe": "Onlyvax, un projet de groupe conçu dans le cadre de ma première année de formation en développement web, propose un site intuitif dédié à la gestion des vaccins et des rappels pour ses utilisateurs.",
-        "image_url": "/asset/img/green_theme.jpg"
+        "image_url": "/asset/img/green_theme.jpg",
+        "github_url": "https://github.com/BilelDounar/ONLYVAX"
     },
     "agGrid": {
         "titre": "AG-GRID",
         "description": "Gestion d’info. utilisateur",
-        "paragraphe": "Ici, vous trouverez un projet d'application web utilisant AG-Grid pour la gestion d'informations utilisateur. Celui-ci a été réalisé lors d'un stage de deux mois à l'étranger.",
-        "image_url": "/asset/img/orange_theme.jpg"
+        "paragraphe": "Ici, vous trouverez un projet d'application web utilisant AG-Grid pour la gestion d'informations utilisateur. <br><br> Celui-ci a été réalisé lors d'un stage de deux mois à l'étranger.",
+        "image_url": "/asset/img/orange_theme.jpg",
+        "github_url": "https://github.com/BilelDounar/AG-Grid"
     },
     "portfolio": {
         "titre": "PORTFOLIO",
         "description": "Mon Portfolio",
-        "paragraphe": "Vous trouverez ici mon portfolio sur lequel vous êtes actuellement. Celui-ci a été créé en HTML/CSS, PHP et JavaScript avec de légères inspirations d’un site très connu.",
-        "image_url": "/asset/img/blue_theme.jpg"
+        "paragraphe": "Vous trouverez ici mon portfolio sur lequel vous êtes actuellement. <br><br> Celui-ci a été créé en HTML/CSS, PHP et JavaScript avec de légères inspirations d’un site très connu.",
+        "image_url": "/asset/img/blue_theme.jpg",
+        "github_url": "https://github.com/BilelDounar/Portfolio"
     }
 };
 
@@ -256,9 +260,10 @@ function modalProjets(event, url, id) {
         var projet = projets[id];
 
         // Affichez les informations du projet spécifique
-        titre_projet.textContent = projet.titre;
-        span_projet.textContent = projet.description;
-        descri_projet.textContent = projet.paragraphe;
+        titre_projet.innerHTML = projet.titre;
+        span_projet.innerHTML = projet.description;
+        descri_projet.innerHTML = projet.paragraphe;
+        link.href = projet.github_url;
 
         modal_projets.style.display = 'block';
         modal_projets.style.backgroundImage = `url("${projet.image_url}")`;

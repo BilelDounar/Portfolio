@@ -938,7 +938,7 @@ video {
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 940px) {
   .sm\:ml-64 {
     margin-left: 16rem;
   }
