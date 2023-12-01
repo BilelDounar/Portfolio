@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="asset/css/input.css">
     <link rel="stylesheet" href="asset/css/output.css">
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="icon" href="asset/img/logo.png" type="image/png">
+    <meta name="description"
+        content="Bienvenue dans mon monde digital ! Je suis Bilel Dounar, un développeur passionné par la création numérique. Explorez mon portfolio où chaque ligne de code raconte une histoire. Envie de donner vie à vos idées ? Contactez-moi et ensemble, transformons vos concepts en réalité digitale.">
+
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ripples.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -89,7 +93,7 @@
         </div>
     </aside>
 
-    <section class="p-4 sm:ml-64">
+    <section class="p-4 sm:ml-64 section_sidebar">
         <section id="profil">
             <div class="wrap">
                 <div class="profil_top">
@@ -110,19 +114,23 @@
                 </div>
                 <div class="profil_réseaux">
                     <div class="reseaux">
-                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-github "></i></a>
+                        <a href="https://github.com/BilelDounar" target="_blank" class="box_img_reseaux"><i
+                                class="fa-brands fa-github "></i></a>
                         <span>GitHub</span>
                     </div>
                     <div class="reseaux">
-                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-instagram "></i></a>
+                        <a href="https://www.instagram.com/blx___x/" target="_blank" class="box_img_reseaux"><i
+                                class="fa-brands fa-instagram "></i></a>
                         <span>Instagram</span>
                     </div>
                     <div class="reseaux">
-                        <a href="" class="box_img_reseaux"><i class="fa-brands fa-linkedin "></i></a>
+                        <a href="https://www.linkedin.com/in/bilel-dounar-26a87b21b/" target="_blank"
+                            class="box_img_reseaux"><i class="fa-brands fa-linkedin "></i></a>
                         <span>LinkedIn</span>
                     </div>
                     <div class="reseaux">
-                        <a href="" class="box_img_reseaux"><i class="fa-solid fa-file-arrow-down "></i></a>
+                        <a href="" target="_blank" class="box_img_reseaux"><i
+                                class="fa-solid fa-file-arrow-down "></i></a>
                         <span>CV</span>
                     </div>
                 </div>
@@ -142,18 +150,15 @@
                 </div>
 
                 <div class="projets_box">
-                    <div class="project_card modal_projets_img1"
-                        onclick="modalProjets(event,'asset/img/green_theme.jpg', 'projetOnlyvax')">
+                    <div class="project_card modal_projets_img1" onclick="modalProjets(event,'projetOnlyvax')">
                         <h2>ONLYVAX</h2>
                         <p>Carnet de vaccination <br> -<br> Projet de formation </p>
                     </div>
-                    <div class="project_card modal_projets_img2"
-                        onclick="modalProjets(event,'asset/img/orange_theme.jpg', 'agGrid')">
+                    <div class="project_card modal_projets_img2" onclick="modalProjets(event,'agGrid')">
                         <h2>AG-GRID</h2>
                         <p>Gestion d’info. utilisateur <br> -<br> Stage à l’étanger </p>
                     </div>
-                    <div class="project_card modal_projets_img3"
-                        onclick="modalProjets(event,'asset/img/blue_theme.jpg', 'portfolio')">
+                    <div class="project_card modal_projets_img3" onclick="modalProjets(event,'portfolio')">
                         <h2>PORTFOLIO</h2>
                         <p>Mon portfolio <br> -<br> Projet personnel </p>
                     </div>
@@ -199,17 +204,17 @@
                             <div class="formulaire_container">
                                 <div class="form_box">
                                     <label for="nom">Nom</label>
-                                    <input type="text" name="nom" id="nom" required placeholder="Nom">
+                                    <input type="text" name="nom" id="nom" placeholder="Nom">
                                 </div>
                                 <div class="form_box">
                                     <label for="message">Message</label>
-                                    <textarea name="message" id="message" required placeholder="Message"></textarea>
+                                    <textarea name="message" id="message" placeholder="Message"></textarea>
                                 </div>
                             </div>
                             <div class="formulaire_container">
                                 <div class="form_box">
                                     <label for="Prenom">Prénom</label>
-                                    <input type="text" name="prenom" id="prenom" required placeholder=" Prénom">
+                                    <input type="text" name="prenom" id="prenom" placeholder="Prénom">
                                 </div>
                                 <div class="form_box">
                                     <label for="email">Email</label>
@@ -260,24 +265,24 @@
         <h1>PORTFOLIO <br>- <br> Bilel D.</h1>
         <l-ripples size="400" speed="7" color="#222222"></l-ripples>
     </div>
+    <div id="modal_bk_filter">
+        <div id="modal_projets">
+            <div class="modal_projets_container">
+                <a class="leave_modal_projets" onclick="leaveModalProjets()"><i class="fa-solid fa-x"></i></a>
 
-    <div id="modal_projets">
-        <div class="modal_projets_container">
-            <a class="leave_modal_projets" onclick="leaveModalProjets()"><i class="fa-solid fa-x"></i></a>
-
-            <div class="modal_projets_text">
-                <h2>ONLYVAX</h2>
-                <span>Carnet de vaccination</span>
-            </div>
-            <div class="modal_projets_content">
-                <p>Text.</p>
-                <a href="" target="_blank" class="box_link_projet">
-                    <span>Accéder à GitHub</span>
-                </a>
+                <div class="modal_projets_text">
+                    <h2>ONLYVAX</h2>
+                    <span>Carnet de vaccination</span>
+                </div>
+                <div class="modal_projets_content">
+                    <p>Text.</p>
+                    <a href="" target="_blank" class="box_link_projet">
+                        <span>Accéder à GitHub</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-
 
 
     <script src="asset/js/main.js"></script>

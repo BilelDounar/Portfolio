@@ -94,7 +94,7 @@ body {
 }
 
 .wrap {
-    width: 980px;
+    width: 950px;
     margin: 0 auto;
     max-width: 100%;
 }
@@ -260,15 +260,15 @@ body {
 }
 
 .project_card:nth-child(1) {
-    background: url(/asset/img/green_theme.jpg) var(--tertiary) 50% / cover no-repeat;
+    background: url(../img/green_theme.jpg) var(--tertiary) 50% / cover no-repeat;
 }
 
 .project_card:nth-child(2) {
-    background: url(/asset/img/orange_theme.jpg) var(--tertiary) 50% / cover no-repeat;
+    background: url(../img/orange_theme.jpg) var(--tertiary) 50% / cover no-repeat;
 }
 
 .project_card:nth-child(3) {
-    background: url(/asset/img/blue_theme.jpg) var(--tertiary) 50% / cover no-repeat;
+    background: url(../img/blue_theme.jpg) var(--tertiary) 50% / cover no-repeat;
 }
 
 .hr_style {
@@ -321,7 +321,7 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 4rem;
     padding-bottom: 4rem;
 }
@@ -355,7 +355,7 @@ form textarea {
     border: var(--secondary) solid 1px;
     resize: none;
     padding: 1rem;
-    width: 15rem;
+    width: 20rem;
 }
 
 form textarea {
@@ -453,11 +453,11 @@ l-ripples {
     z-index: 99;
     position: fixed;
     top: 20%;
-    right: 20%;
+    right: 15%;
 }
 
 .modal_projets_container {
-    width: 62.6875rem;
+    width: 70rem;
     height: 31.375rem;
     padding: 3rem;
 }
@@ -517,12 +517,27 @@ l-ripples {
 
 .leave_modal_projets {
     position: absolute;
-    top: 5%;
-    right: 3%;
+    top: 0%;
+    right: 0%;
+    cursor: pointer;
+    padding: 2rem;
+
+    &:hover {
+        color: #545454;
+    }
 }
 
+.modal_bk_filter {
+    display: none;
+    z-index: 98;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
 
-
+.modal_projets_container {
+    color: #fff;
+}
 
 
 
