@@ -1,3 +1,8 @@
+AOS.init({
+    once: true,
+    startEvent: 'DOMContentLoaded'
+});
+
 let blanc10 = '#ffffff10';
 let blanc = '#fff';
 
@@ -109,7 +114,7 @@ function toggleTheme() {
                 element.style.color = 'black';
             });
 
-        } else if (newPrimaryColor === '#000000') {
+        } else {
             // Sinon, le texte devient blanc
             element.style.color = 'white';
 
@@ -287,6 +292,74 @@ function modalProjets(event, id) {
 function leaveModalProjets() {
     modal_projets.style.display = 'none';
 }
+const closemenu = document.querySelector('.leave_sidebar');
+var sidebar = document.querySelector('.sidebar');
 
 
 
+function burgerOpen() {
+    const sidebarHidden = document.querySelector('.sm\\:translate-x-0');
+
+
+    sidebarHidden.classList.toggle('hidden');
+    sidebarHidden.style.width = '0px';
+    sidebar.style.width = '100vw';
+    closemenu.style.display = 'block'
+}
+
+console.log(window.innerWidth);
+function burgerClose() {
+    const sidebarHidden = document.querySelector('.sm\\:translate-x-0');
+
+
+    var sidebar = document.querySelector('.sidebar');
+    sidebarHidden.classList.toggle('hidden');
+
+    if (window.innerWidth >= 1050) {
+        sidebar.style.display = 'flex';
+        sidebarHidden.style.width = '0';
+        sidebar.style.width = '22vw';
+        location.reload();
+    } else {
+        sidebar.style.width = '0vw';
+        sidebarHidden.style.width = '20vw';
+
+
+    }
+    closemenu.style.display = 'none'
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const changingText = document.getElementById("changing-text");
+    const texts = ["1 Etudiant", "1 Développeur", "1 Alternant?"];
+
+    let index = 0;
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < texts[index].length) {
+            changingText.textContent += texts[index].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 100); // Adjust the typing speed here
+        } else {
+            setTimeout(erase, 2000); // Adjust the time before erasing here
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            changingText.textContent = texts[index].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, 50); // Adjust the erasing speed here
+        } else {
+            index++;
+            if (index >= texts.length) {
+                index = 0;
+            }
+            setTimeout(type, 1000); // Adjust the time before typing the next text here
+        }
+    }
+
+    type(); // Start the typing animation
+});

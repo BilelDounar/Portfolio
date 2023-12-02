@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -13,21 +13,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/css/input.css">
     <link rel="stylesheet" href="asset/css/output.css">
-    <link rel="stylesheet" href="asset/css/style.css">
     <link rel="icon" href="asset/img/logo.png" type="image/png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="description"
         content="Bienvenue dans mon monde digital ! Je suis Bilel Dounar, un développeur passionné par la création numérique. Explorez mon portfolio où chaque ligne de code raconte une histoire. Envie de donner vie à vos idées ? Contactez-moi et ensemble, transformons vos concepts en réalité digitale.">
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ripples.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <title>Bilel Dounar - Portfolio</title>
+    <link rel="stylesheet" href="asset/css/style.css">
 </head>
 
 <body>
-    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
-        type="button"
+    <button onclick="burgerOpen()" id="burger_button" data-drawer-target="logo-sidebar"
+        data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button"
         class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -45,7 +47,8 @@
 
             <div class="element_sidebar">
 
-                <ul class="space-y-2 font-medium">
+                <ul class="space-y-2 font-medium" data-aos="fade-right" data-aos-anchor-placement="top-bottom"
+                    data-aos-delay="2000" data-aos-duration="1000">
                     <a href="#" class="flex items-center ps-2.5 mb-5">
                         <span class="logo_sidebar self-center text-xl font-semibold whitespace-nowrap ">Bilel
                             Dounar</span>
@@ -88,48 +91,52 @@
                 <a href="#" onclick="contracteSidebar(event)" class="parameter dark:hover:bg-gray-700">
                     <i id="sidebarIcon" class="fa-solid fa-angles-left"></i>
                 </a>
-
             </div>
         </div>
     </aside>
 
     <section class="p-4 sm:ml-64 section_sidebar">
         <section id="profil">
-            <div class="wrap">
+            <div class="wrap" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="2000">
                 <div class="profil_top">
                     <div class="profil_photo">
                         <img src="asset/img/photo_profil.jpeg" alt="">
                     </div>
-                    <div class="profil_info ">
+                    <div class="profil_info">
                         <h2>BLX___X</h2>
                         <div class="profil_info_stat">
                             <span> 3 Réseaux</span>
                             <span> 3 Projets</span>
-                            <span>1 Développeur</span>
+                            <span id="changing-text"></span>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit
+                        <p class="profil_info_p">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+                            Aliquam in hendrerit
                             urna.
                         </p>
                     </div>
                 </div>
                 <div class="profil_réseaux">
-                    <div class="reseaux">
+                    <div class="reseaux" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="2000"
+                        data-aos-duration="900">
                         <a href="https://github.com/BilelDounar" target="_blank" class="box_img_reseaux"><i
                                 class="fa-brands fa-github "></i></a>
                         <span>GitHub</span>
                     </div>
-                    <div class="reseaux">
+                    <div class="reseaux" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="2000"
+                        data-aos-duration="1100">
                         <a href="https://www.instagram.com/blx___x/" target="_blank" class="box_img_reseaux"><i
                                 class="fa-brands fa-instagram "></i></a>
                         <span>Instagram</span>
                     </div>
-                    <div class="reseaux">
+                    <div class="reseaux" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="2000"
+                        data-aos-duration="1400">
                         <a href="https://www.linkedin.com/in/bilel-dounar-26a87b21b/" target="_blank"
                             class="box_img_reseaux"><i class="fa-brands fa-linkedin "></i></a>
                         <span>LinkedIn</span>
                     </div>
-                    <div class="reseaux">
-                        <a href="" target="_blank" class="box_img_reseaux"><i
+                    <div class="reseaux" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="2000"
+                        data-aos-duration="1700">
+                        <a href="/asset/img/blue_theme.jpg" download target="_blank" class="box_img_reseaux"><i
                                 class="fa-solid fa-file-arrow-down "></i></a>
                         <span>CV</span>
                     </div>
@@ -150,15 +157,18 @@
                 </div>
 
                 <div class="projets_box">
-                    <div class="project_card modal_projets_img1" onclick="modalProjets(event,'projetOnlyvax')">
+                    <div class="project_card modal_projets_img1" onclick="modalProjets(event,'projetOnlyvax')"
+                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                         <h2>ONLYVAX</h2>
                         <p>Carnet de vaccination <br> -<br> Projet de formation </p>
                     </div>
-                    <div class="project_card modal_projets_img2" onclick="modalProjets(event,'agGrid')">
+                    <div class="project_card modal_projets_img2" onclick="modalProjets(event,'agGrid')"
+                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                         <h2>AG-GRID</h2>
                         <p>Gestion d’info. utilisateur <br> -<br> Stage à l’étanger </p>
                     </div>
-                    <div class="project_card modal_projets_img3" onclick="modalProjets(event,'portfolio')">
+                    <div class="project_card modal_projets_img3" onclick="modalProjets(event,'portfolio')"
+                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                         <h2>PORTFOLIO</h2>
                         <p>Mon portfolio <br> -<br> Projet personnel </p>
                     </div>
@@ -178,7 +188,8 @@
                     <h3 class="underline"><i class="fa-solid fa-briefcase"></i> Compétences</h3>
                 </div>
 
-                <div class="competences_chart">
+                <div class="competences_chart" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+                    data-aos-easing="linear">
                     <canvas id="myChart" height="120px"></canvas>
                 </div>
                 <div class="hr_style">
@@ -193,12 +204,20 @@
             <div class="wrap2">
                 <div class="contact_text">
                     <h2>ME CONTACTER</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit
-                        urna.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit
-                        urna.</p>
+                    <p data-aos="fade-up" data-aos-anchor-placement="center-bottom">Formulaire de Contact : Utilisez le
+                        formulaire en ligne pour un contact rapide et efficace. <br>
+
+                        E-mail : Envoyez-moi un e-mail à <a
+                            href="mailto:bilel.dounar.pro@gmail.com">bilel.dounar.pro@gmail.com</a>. Je répondrai dès
+                        que possible.
+                        <br>
+                        Réseaux Sociaux : Rendez vous sur mes réseaux sociaux afin de m'envoyer un message. <br>
+
+                        Téléphone : Préférez-vous parler de vive voix ? Appelez-moi au <a href="tel:+33785430209">07.85.43.02.09</a>.
+                    </p>
                 </div>
 
-                <div class="contact_form">
+                <div class="contact_form" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                     <form action="" method="post">
                         <div class="formulaire">
                             <div class="formulaire_container">
@@ -223,12 +242,19 @@
                                 <input type="submit" value="Envoyer">
                             </div>
                         </div>
+                        <div class="form_data_check">
+                            <input type="checkbox">
+                            <p>En cochant cette case, vous consentez à l'utilisation <br> de vos informations afin
+                                d'être
+                                recontacté(e).</p>
+                        </div>
                     </form>
                 </div>
-                <div class="hr_style">
+                <div class="hr_style" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                     <hr>
                 </div>
-                <p class="copyright">Copyright&copy - Bilel Dounar - Tous droit réservé</p>
+                <p data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="copyright">Copyright&copy - Bilel
+                    Dounar - Tous droit réservé</p>
             </div>
         </section>
 
@@ -236,7 +262,7 @@
 
     <div id="modal_parameter">
         <div class="modal_parameter_container">
-            <a class="leave_modal" onclick="leaveModal()"><i class="fa-solid fa-x"></i></a>
+            <span class="leave_modal" onclick="leaveModal()"><i class="fa-solid fa-x"></i></span>
             <div class="modal_parameter_text">
                 <h2>PARAMETRES</h2>
                 <br>
@@ -268,7 +294,7 @@
     <div id="modal_bk_filter">
         <div id="modal_projets">
             <div class="modal_projets_container">
-                <a class="leave_modal_projets" onclick="leaveModalProjets()"><i class="fa-solid fa-x"></i></a>
+                <span class="leave_modal_projets" onclick="leaveModalProjets()"><i class="fa-solid fa-x"></i></span>
 
                 <div class="modal_projets_text">
                     <h2>ONLYVAX</h2>
@@ -276,14 +302,14 @@
                 </div>
                 <div class="modal_projets_content">
                     <p>Text.</p>
-                    <a href="" target="_blank" class="box_link_projet">
+                    <a href="#" target="_blank" class="box_link_projet">
                         <span>Accéder à GitHub</span>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-
+    <span class="leave_sidebar" onclick="burgerClose()"><i class="fa-solid fa-x"></i></span>
 
     <script src="asset/js/main.js"></script>
 
