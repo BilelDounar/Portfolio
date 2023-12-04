@@ -1,5 +1,4 @@
 AOS.init({
-    once: true,
     startEvent: 'DOMContentLoaded'
 });
 
@@ -332,7 +331,7 @@ function burgerClose() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const changingText = document.getElementById("changing-text");
-    const texts = ["1 Etudiant", "1 Développeur", "1 Alternant?"];
+    const texts = [" Etudiant", " Développeur", " Alternant?"];
 
     let index = 0;
     let charIndex = 0;

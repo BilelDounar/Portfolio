@@ -165,7 +165,7 @@ body {
 }
 
 .profil_photo img {
-    width: 15rem;
+    width: 38rem;
     height: auto;
     border-radius: 50%;
     border: solid var(--secondary);
@@ -233,11 +233,10 @@ body {
     cursor: pointer;
     filter: grayscale(100%);
     transition: all 300ms ease-in-out;
+}
 
-    &:hover {
-        filter: grayscale(0);
-        transform: scale(1.1);
-    }
+.project_card:hover {
+    filter: grayscale(0%);
 }
 
 .project_card h2 {
@@ -606,7 +605,7 @@ l-ripples {
     padding: 0 0 2rem 0;
 }
 
-input[type="checkbox"] {
+.form_data_check input[type="checkbox"] {
     width: auto;
 }
 
@@ -620,7 +619,13 @@ input[type="checkbox"] {
 }
 
 
-
+.leave_sidebar {
+    display: none;
+    position: fixed;
+    z-index: 199;
+    top: 2%;
+    right: 3%;
+}
 
 
 
@@ -628,10 +633,23 @@ input[type="checkbox"] {
 @media screen and (max-width: 1050px) {
 
 
+    .formulaire {
+        gap: 2rem;
+    }
+
+    .profil_photo img {
+        width: 13rem;
+    }
+
+    .profil_info {
+        margin-left: 0;
+        width: 100%;
+    }
+
     .modal_projets_content {
         display: flex;
         position: relative;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: nowrap;
         align-items: flex-start;
     }
@@ -656,7 +674,7 @@ input[type="checkbox"] {
 
     .modal_projets_text span {
         text-align: center;
-padding: 1rem 0;
+        padding: 1rem 0;
     }
 
     .modal_projets_text {
@@ -702,9 +720,16 @@ padding: 1rem 0;
         text-align: center;
     }
 
+    .profil_info_stat span {
+        padding-right: 0;
+    }
+
     .profil_info_stat {
         justify-content: center;
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
     }
 
     .profil_info_p {
@@ -732,13 +757,7 @@ padding: 1rem 0;
         display: none;
     }
 
-    .leave_sidebar {
-        display: none;
-        position: fixed;
-        z-index: 199;
-        top: 2%;
-        right: 3%;
-    }
+
 
 }
 
