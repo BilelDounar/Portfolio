@@ -139,10 +139,10 @@ function toggleTheme() {
 }
 
 var data = {
-    labels: ['HTML', 'CSS', 'PHP', 'SQL', 'JS'],
+    labels: ['HTML', 'CSS', 'PHP', 'SQL', 'JS', 'Git', 'Figma'],
     datasets: [{
-        label: 'Savoir /100%',
-        data: [90, 75, 70, 80, 60],
+        label: 'Maitrise sur 100',
+        data: [90, 75, 70, 80, 60, 90, 65],
         backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)'], // Couleur de fond pour chaque barre
         borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 205, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)'], // Couleur de la bordure pour chaque barre
         borderWidth: 1,
@@ -302,7 +302,7 @@ function burgerOpen() {
 
     sidebarHidden.classList.toggle('hidden');
     sidebarHidden.style.width = '0px';
-    sidebar.style.width = '100vw';
+    sidebar.style.width = '70vw';
     closemenu.style.display = 'block'
 }
 

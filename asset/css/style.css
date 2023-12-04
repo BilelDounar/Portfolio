@@ -530,7 +530,7 @@ l-ripples {
 .modal_bk_filter {
     display: none;
     z-index: 98;
-    position: fixed;
+    position: relative;
     width: 100vw;
     height: 100vh;
 }
@@ -623,11 +623,10 @@ l-ripples {
     display: none;
     position: fixed;
     z-index: 199;
-    top: 2%;
-    right: 3%;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
 }
-
-
 
 
 @media screen and (max-width: 1050px) {
@@ -646,42 +645,28 @@ l-ripples {
         width: 100%;
     }
 
+
     .modal_projets_content {
         display: flex;
+        justify-content: space-between;
         position: relative;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-    }
-
-    #modal_projets {
-        display: none;
-        z-index: 99;
-        position: absolute;
-        top: 170%;
-        right: 0%;
-        width: 90%;
-        height: 80vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        flex-direction: column;
+        align-items: center;
     }
 
     .modal_projets_content p {
         width: auto;
-        text-align: center;
-        margin-bottom: 2rem;
+        font-size: 1rem;
     }
 
-    .modal_projets_text span {
-        text-align: center;
-        padding: 1rem 0;
+    .modal_projets_content a {
+        width: 15rem;
+        height: 10rem;
     }
 
-    .modal_projets_text {
-        display: flex;
-        padding: 1rem 0 3rem;
-        flex-direction: column;
-        align-items: center;
+    #modal_projets {
+        top: 5%;
+        right: 7%;
     }
 
 
@@ -757,6 +742,18 @@ l-ripples {
         display: none;
     }
 
+    .modal_projets_text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0 1rem;
+    }
+
+    .modal_projets_container {
+        width: 85vw;
+        height: 100vh;
+        padding: 3rem;
+    }
 
 
 }
