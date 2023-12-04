@@ -601,6 +601,7 @@ l-ripples {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: row;
     padding: 0 0 2rem 0;
 }
@@ -626,6 +627,19 @@ l-ripples {
     top: 0;
     left: 0;
     padding: 1.5rem;
+}
+
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    position: fixed;
+    z-index: 180;
+    bottom: 0;
+    width: 100%;
 }
 
 

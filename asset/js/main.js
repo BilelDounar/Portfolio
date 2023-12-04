@@ -362,3 +362,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     type(); // Start the typing animation
 });
+
+
+
+function desactiverBouton() {
+    var bouton = document.getElementById('submitBtn');
+    setTimeout(function() {
+        bouton.disabled = true;
+    }, 1000); 
+
+    setTimeout(function() {
+        bouton.disabled = false;
+    }, 5000); 
+}
