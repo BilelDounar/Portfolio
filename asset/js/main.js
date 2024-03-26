@@ -6,15 +6,11 @@ let blanc10 = '#ffffff10';
 let blanc = '#fff';
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Le DOM est prêt, mais certaines ressources peuvent encore être en cours de chargement
     console.log('DOM prêt');
 
-    // Ajouter un gestionnaire d'événement pour l'événement onload de la fenêtre
     window.onload = function () {
-        // Tout le contenu de la page, y compris les ressources externes, est chargé
         console.log('Toute la page est chargée');
 
-        // Ajouter un délai de 2 secondes avant de masquer l'écran de chargement
         setTimeout(function () {
             var loadingScreen = document.getElementById('loading-screen');
             loadingScreen.style.display = 'none';
@@ -77,7 +73,6 @@ function leaveModal() {
 
 
 function toggleTheme() {
-    // Fermer le modal_parameter si ouvert
     var modal_parameter = document.getElementById('modal_parameter');
 
     blanc = '#000';
@@ -87,54 +82,44 @@ function toggleTheme() {
     var currentPrimaryColor = getComputedStyle(root).getPropertyValue('--primary').trim();
     var currentSecondaryColor = getComputedStyle(root).getPropertyValue('--secondary').trim();
 
-    // Basculer entre les couleurs primaires claires et sombres
     var newPrimaryColor = currentPrimaryColor === '#000000' ? '#ffffff' : '#000000';
     var newSecondaryColor = currentSecondaryColor === '#f5f5f5' ? '#000000' : '#ffffff';
 
-    // Modifier les variables dans :root
     root.style.setProperty('--primary', newPrimaryColor);
     root.style.setProperty('--secondary', newSecondaryColor);
 
-    // Modifier la couleur du texte et du hover directement
     var elementsWithWhiteText = document.querySelectorAll('.dark\\:text-white');
 
     elementsWithWhiteText.forEach(function (element) {
         if (newPrimaryColor === '#ffffff') {
-            // Si la couleur primaire est blanche, le texte devient noir
             element.style.color = 'black';
 
-            // Modifier la couleur au survol en blanc
             element.addEventListener('mouseover', function () {
                 element.style.color = 'white';
             });
 
-            // Revenir à la couleur originale après le survol
             element.addEventListener('mouseout', function () {
                 element.style.color = 'black';
             });
 
         } else {
-            // Sinon, le texte devient blanc
             element.style.color = 'white';
 
-            // Modifier la couleur au survol en blanc
             element.addEventListener('mouseover', function () {
                 element.style.color = 'black';
             });
 
-            // Revenir à la couleur originale après le survol
             element.addEventListener('mouseout', function () {
                 element.style.color = 'white';
             });
         }
     });
 
-    // Mettre à jour les options du graphique avec les nouvelles couleurs
+
     options.scales.y.grid.color = blanc10;
     options.scales.y.ticks.color = blanc;
     options.scales.x.ticks.color = blanc;
 
-    // Mettre à jour le graphique
     myChart.update();
 }
 
@@ -338,7 +323,7 @@ function burgerClose() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const changingText = document.getElementById("changing-text");
-    const texts = [" Etudiant", " Développeur", " Alternant?"];
+    const texts = [" Etudiant", " Développeur", " Future Alternant?"];
 
     let index = 0;
     let charIndex = 0;
