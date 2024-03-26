@@ -223,6 +223,14 @@ if (!empty($_POST['submitted'])) {
                         <h2>PORTFOLIO</h2>
                         <p>Mon portfolio <br> -<br> Projet personnel </p>
                     </div>
+                    <div class="project_card modal_projets_img4" onclick="modalProjets(event,'CanView')" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                        <h2>Can View</h2>
+                        <p>Gestionnaire de CV <br> -<br> Projet de formation </p>
+                    </div>
+                    <div class="project_card modal_projets_img5" onclick="modalProjets(event,'Pitchoune')" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                        <h2>Pitchoune</h2>
+                        <p>Garde d'enfant facilité <br> -<br> Projet de formation </p>
+                    </div>
                 </div>
 
                 <div class="hr_style">

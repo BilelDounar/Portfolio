@@ -269,6 +269,12 @@ body {
 .project_card:nth-child(3) {
     background: url(../img/blue_theme.jpg) var(--tertiary) 50% / cover no-repeat;
 }
+.project_card:nth-child(4) {
+    background: url(../img/green_theme2.jpg) var(--tertiary) 50% / cover no-repeat;
+}
+.project_card:nth-child(5) {
+    background: url(../img/blue_theme2.jpg) var(--tertiary) 50% / cover no-repeat;
+}
 
 .hr_style {
     margin: 0 auto;
@@ -452,7 +458,7 @@ l-ripples {
     z-index: 99;
     position: fixed;
     top: 20%;
-    right: 15%;
+    right: 15%; 
 }
 
 .modal_projets_container {

@@ -139,12 +139,12 @@ function toggleTheme() {
 }
 
 var data = {
-    labels: ['HTML', 'CSS', 'PHP', 'SQL', 'JS', 'Git', 'Figma'],
+    labels: ['HTML', 'SCSS', 'PHP', 'Symfony', 'SQL', 'JS', 'React', 'WordPress', 'Git', 'Figma'],
     datasets: [{
         label: 'Maitrise sur 100',
-        data: [90, 75, 70, 80, 60, 90, 65],
-        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)'], // Couleur de fond pour chaque barre
-        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 205, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)'], // Couleur de la bordure pour chaque barre
+        data: [90, 75, 70, 40, 80, 60, 40, 70, 80, 50],
+        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)'],
+        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 205, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)'],
         borderWidth: 1,
 
     }]
@@ -158,25 +158,25 @@ var options = {
             max: 100,
             beginAtZero: true,
             grid: {
-                color: blanc10 // Couleur de la grille de l'axe Y
+                color: blanc10
             },
             ticks: {
-                color: blanc // Couleur du texte de l'axe Y
+                color: blanc
             }
         },
         x: {
             ticks: {
-                color: blanc // Couleur du texte de l'axe Y
+                color: blanc
             }
         }
     },
     animation: {
         onComplete: function (animation) {
-            // Marquer l'animation comme complète après l'apparition de la dernière barre
+
             myChart.options.animation.onComplete = null;
         },
         delay: function (context) {
-            // Ajouter un délai pour chaque barre basé sur son index
+
             return context.dataIndex * 100;
         }
     },
@@ -190,7 +190,6 @@ var options = {
         intersect: true
     },
     onClick: function (event, elements) {
-        // Gérer le clic sur une barre
         if (elements.length > 0) {
             var index = elements[0].index;
             console.log('Barre cliquée :', data.labels[index], data.datasets[0].data[index]);
@@ -211,16 +210,12 @@ var myChart = new Chart(ctx, {
 document.addEventListener('DOMContentLoaded', function () {
     var socialIcons = document.querySelectorAll('.reseaux .fa-brands,.reseaux .fa-solid ');
 
-    // Ajouter la classe lors du survol pour chaque icône
     socialIcons.forEach(function (icon) {
         icon.addEventListener('mouseover', function () {
-            // Ajoutez la classe fa-bounce à votre élément <i>
             icon.classList.add('fa-bounce');
         });
 
-        // Supprimer la classe lorsqu'on quitte le survol
         icon.addEventListener('mouseout', function () {
-            // Retirez la classe fa-bounce de votre élément <i>
             icon.classList.remove('fa-bounce');
         });
     });
@@ -256,6 +251,20 @@ let projets = {
         "paragraphe": "Vous trouverez ici mon portfolio sur lequel vous êtes actuellement. <br><br> Celui-ci a été créé en HTML/CSS, PHP et JavaScript avec de légères inspirations d’un site très connu.",
         "image_url": "asset/img/blue_theme.jpg",
         "github_url": "https://github.com/BilelDounar/Portfolio"
+    },
+    "CanView": {
+        "titre": "CAN VIEW",
+        "description": "Gestion/Création de CV dans le cadre d'une entreprise",
+        "paragraphe": "Canview, un 3e projet de groupe conçu dans le cadre de ma première année de formation en développement web, est un site permettant de faciliter le recrutement dans une entreprise en gérant et créant nos CV directement sur le site.",
+        "image_url": "asset/img/green_theme2.jpg",
+        "github_url": "https://github.com/BilelDounar/canview"
+    },
+    "Pitchoune": {
+        "titre": "Pitchoune",
+        "description": "Gestionnaire de prise de garde pour crèche",
+        "paragraphe": "Pitchoune, le dernier projet de ma première année en développement web, celui-ci est un outil en ligne permettant de mettre en relation des particulier et des crèches afin de faciliter la garde d'enfant.",
+        "image_url": "asset/img/blue_theme2.jpg",
+        "github_url": "https://github.com/BilelDounar/pitchoune"
     }
 };
 
@@ -265,11 +274,9 @@ var modal_bk_filter = document.querySelector('#modal_bk_filter')
 function modalProjets(event, id) {
     event.preventDefault();
 
-    // Vérifiez si l'ID spécifié existe dans les projets
     if (projets.hasOwnProperty(id)) {
         var projet = projets[id];
 
-        // Affichez les informations du projet spécifique
         titre_projet.innerHTML = projet.titre;
         span_projet.innerHTML = projet.description;
         descri_projet.innerHTML = projet.paragraphe;
@@ -340,9 +347,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (charIndex < texts[index].length) {
             changingText.textContent += texts[index].charAt(charIndex);
             charIndex++;
-            setTimeout(type, 100); // Adjust the typing speed here
+            setTimeout(type, 100);
         } else {
-            setTimeout(erase, 2000); // Adjust the time before erasing here
+            setTimeout(erase, 2000);
         }
     }
 
@@ -350,28 +357,28 @@ document.addEventListener("DOMContentLoaded", function () {
         if (charIndex > 0) {
             changingText.textContent = texts[index].substring(0, charIndex - 1);
             charIndex--;
-            setTimeout(erase, 50); // Adjust the erasing speed here
+            setTimeout(erase, 50);
         } else {
             index++;
             if (index >= texts.length) {
                 index = 0;
             }
-            setTimeout(type, 1000); // Adjust the time before typing the next text here
+            setTimeout(type, 1000);
         }
     }
 
-    type(); // Start the typing animation
+    type();
 });
 
 
 
 function desactiverBouton() {
     var bouton = document.getElementById('submitBtn');
-    setTimeout(function() {
+    setTimeout(function () {
         bouton.disabled = true;
-    }, 1000); 
+    }, 1000);
 
-    setTimeout(function() {
+    setTimeout(function () {
         bouton.disabled = false;
-    }, 5000); 
+    }, 5000);
 }
